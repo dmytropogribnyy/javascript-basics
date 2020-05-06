@@ -1,0 +1,7 @@
+Node include Google V8 Javascript engine.
+console: typeof var  #returns type of variable
+Ctrl + L #clear console
+ clg
+
+let person = {}  #curly braces is an object literal
+
