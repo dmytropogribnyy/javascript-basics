@@ -125,8 +125,8 @@ console.log(true == 1);
 console.log(1 == true);
 
 // !SWAPPING VARIABLES
-let a = 10;
-let b = 2;
+let a = "red";
+let b = "blue";
 let c = a;
 a = b;
 b = c;
@@ -140,28 +140,31 @@ else if (hour >= 12 && hour < 18) console.log("Good afternoon!");
 else console.log("Good evening!");
 
 // !SWITCH CASE
-// let role = "guest";
-// switch (role) {
-//   case "guest":
-//     console.log("Guest User");
-//     break;
-
-//   case "moderator":
-//     console.log("Moderator User");
-//     break;
-
-//   default:
-//     console.log("Unknown User");
-// }
-
-// todo: we can use if else here it's cleaner way!
-
 let role = "guest";
-if (role === "guest") console.log("Guest User");
-else if (role === "moderator") console.log("Moderator User");
+switch (role) {
+  case "guest":
+    console.log("Guest User");
+    break;
+
+  case "moderator":
+    console.log("Moderator User");
+    break;
+
+  default:
+    console.log("Unknown User");
+}
+
+// todo: we can use if else here - it's cleaner way!
+
+let role1 = "guest";
+if (role1 === "guest") console.log("Guest User");
+else if (role1 === "moderator") console.log("Moderator User");
 else console.log("Unknowm User");
 
 // !for
+// for (initialExpression; condition; incrementExpression) {
+//   statement
+// }
 for (let i = 0; i <= 5; i++) {
   if (i % 2 !== 0) console.log(i);
 }
@@ -178,3 +181,32 @@ let j = 9;
 do {
   if (j % 2 !== 0) console.log(j);
 } while (j <= 5);
+
+// !for..in
+// 1 for.. in for object
+const human = {
+  name: "Dmitry",
+  age: 40,
+};
+for (let key in human) console.log(key, human[key]);
+
+// 2 for..in for array
+// const colors = ["red", "green", "blue"];
+// for (index in colors) console.log(index, colors[index]);
+
+// !for..of is a modern way (ES6) to iterate over array
+const colors = ["red", "green", "blue"];
+for (color of colors) console.log(color);
+
+// !break & continue
+let h = 0;
+while (h < 10) {
+  // if (h === 5) break;
+  if (h % 2 === 0) {
+    h++;
+    continue; //continue returns to the start of the loop
+    //and jumps to the next iteration
+  }
+  console.log(h);
+  h++;
+}
