@@ -188,15 +188,36 @@ const human = {
   name: "Dmitry",
   age: 40,
 };
-for (let key in human) console.log(key, human[key]);
+for (let key in human) console.log(key, human[key]); //human[key] means: get "human of key" === "value of this key"
 
 // 2 for..in for array
 // const colors = ["red", "green", "blue"];
 // for (index in colors) console.log(index, colors[index]);
 
-// !for..of is a modern way (ES6) to iterate over array
+// !for..of is a modern way (ES6) to iterate over ARRAYS & MAPS
 const colors = ["red", "green", "blue"];
-for (color of colors) console.log(color);
+for (let color of colors) console.log(color);
+
+// ! can use forEach method as well
+const fruits = ["apple", "orange", "mango"];
+
+fruits.forEach((fruit) => console.log(fruit));
+// or use with index
+fruits.forEach((fruit, index) => console.log(index, fruit));
+
+// todo But we can use for..of loop to iterate over object too
+// todo Using Object.keys() or Object.entries() methods
+const circle = {
+  radius: 1,
+  draw() {
+    console.log("draw");
+  },
+};
+
+for (let key of Object.keys(circle)) console.log(key);
+// or
+for (let entry of Object.entries(circle)) console.log(entry);
+// ****************************************************************************
 
 // !break & continue
 let h = 0;
