@@ -74,4 +74,13 @@ function Video(title) {
 }
 
 const v = new Video("b");
+
+function playVideo(a, b) {
+	console.log(this);
+}
+
+playVideo.call({ name: "Dmitry" }, 1, 2);
+playVideo.apply({ name: "Dmitry" }, [1, 2]);
+const fn = playVideo.bind({ name: "Dmitry" });
+fn();
 // ----------------------------------------------------------
